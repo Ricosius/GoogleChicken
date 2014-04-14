@@ -32,6 +32,25 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.example.googlechicken.Settings"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.googlechicken.SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.example.googlechicken.InternalStore"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.googlechicken.INTERNALSTORE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

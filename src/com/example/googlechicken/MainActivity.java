@@ -1,5 +1,7 @@
 package com.example.googlechicken;
 
+
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener{
 	
-	Button width,height,calc;
+	Button width,height,calc,save;
 	TextView area;
 
 	@Override
@@ -21,11 +23,17 @@ public class MainActivity extends Activity implements OnClickListener{
 		width = (Button)findViewById(R.id.button1);
 		height = (Button)findViewById(R.id.button2);
 		calc = (Button)findViewById(R.id.button3);
+		save = (Button)findViewById(R.id.button4);
+		
+		
+		
 		area = (TextView)findViewById(R.id.textView1);
 		
 		width.setOnClickListener(this);
 		height.setOnClickListener(this);
 		calc.setOnClickListener(this);
+		save.setOnClickListener(this);
+		
 	}
 
 
@@ -46,12 +54,24 @@ public class MainActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.button3:
 			//calc
+			int a = Integer.valueOf(width.getText().toString());
+			int b = Integer.valueOf(height.getText().toString());
+			area.setText(a*b+" uitkomst x");
 			break;
+		case R.id.button4:
+			startActivity(new Intent("com.example.googlechicken.SETTINGS"));
 			
-		default:
 			break;
+		
 		}
+		
 	}
+	
+	
+	
+	 
+
+	
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
